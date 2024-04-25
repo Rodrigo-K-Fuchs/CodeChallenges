@@ -22,7 +22,7 @@
 #──────────────────────────────────────────────
 #──────────────────────────────────────────────
 # LEETCODE CHALLENGE Add Two Numbers
-#
+# source link Try out youself: https://leetcode.com/problems/add-two-numbers/description/
 #Definition for singly-linked list.
 #
 #class ListNode(object):
@@ -49,9 +49,10 @@ class Solution(object):
             if l2:
                 carry += l2.val
                 l2 = l2.next
-            # Updating the node and the carry according to the sums 
+            # Updating the node with the remainder of the carry if it exceeds 10
             auxNode.next = ListNode(carry%10)
             auxNode = auxNode.next
+            # Updating the carry to be either 1 or 0
             carry = carry//10
             
         return node.next 
